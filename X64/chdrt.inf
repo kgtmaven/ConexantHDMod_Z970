@@ -17,7 +17,7 @@
 Signature="$Windows NT$"
 Class=MEDIA
 ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
-Provider=%CNXT%
+Provider="Modded by kgtmaven"
 DriverVer = 12/15/2016,8.66.57.54
 CatalogFile=chdrt.cat
 
@@ -29,7 +29,8 @@ CoInstaller.CopyFiles=10,system32
 Uninstall.CopyList=16422,CONEXANT\%UIPATH%
 SfxFx.CopyList=11     ; %windir%\system32
 SRS3Fx.CopyList=11,SRSLabs
-
+PCEE4.CopyFiles=11
+Dolby.CopyFiles=11
 
 [DriverInfo.DelReg]
 HKLM,Software\InstalledOptions\%DriverMfgr%\%DriverFamily%\%DriverMfgr%\%DriverProduct%
@@ -59,6 +60,19 @@ mixer.ini=222
 altmixer.ini=222
 CX64BP30.dll=222
 CxPageMaster64.dll=222
+MCWrp64.DLL=222
+DolbyDAX2APOv211.dll=222
+DolbyDAX2APOProp.dll=222
+HiFiDAX2API.dll=222
+DDPO64A.dll=222
+DDPD64A.dll=222
+DDPP64A.dll=222
+DDPA64.dll=222
+EEL64A.dll=222
+EED64A.dll=222
+EEG64A.dll=222
+EEA64A.dll=222
+EEP64A.dll=222
 ; SRS V3
 slcnt64.dll=222
 slprp64.dll=222
@@ -79,6 +93,19 @@ CX64BP30.dll=SignatureAttributes.PETrust
 CSpkExt64.dll=SignatureAttributes.PETrust
 
 CxPageMaster64.dll=SignatureAttributes.PETrust
+MCWrp64.dll=SignatureAttributes.PETrust
+DolbyDAX2APOv211.dll=SignatureAttributes.PETrust
+DolbyDAX2APOProp.dll=SignatureAttributes.PETrust
+HiFiDAX2API.dll=SignatureAttributes.PETrust
+DDPO64A.dll=SignatureAttributes.PETrust
+DDPD64A.dll=SignatureAttributes.PETrust
+DDPP64A.dll=SignatureAttributes.PETrust
+DDPA64.dll=SignatureAttributes.PETrust
+EEL64A.dll=SignatureAttributes.PETrust
+EED64A.dll=SignatureAttributes.PETrust
+EEG64A.dll=SignatureAttributes.PETrust
+EEA64A.dll=SignatureAttributes.PETrust
+EEP64A.dll=SignatureAttributes.PETrust
 ; SRS V3
 slcnt64.dll=SignatureAttributes.PETrust
 slprp64.dll=SignatureAttributes.PETrust
@@ -142,55 +169,55 @@ ExcludeFromSelect = *
 Include=ks.inf,wdmaudio.inf
 Needs=KS.Registration,WDMAUDIO.Registration
 DelReg=HdAud.DelReg, DriverInfo.DelReg
-CopyFiles = HdAudModelV64.Copylist, Uninstall.Copylist, SfxFxW7.CopyList, SRS3Fx.CopyList
-AddReg    = HdAudModel.AddReg, HdAud2072x.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, W7SRS3.AddReg, DTSCoInst.AddReg
+CopyFiles = HdAudModelV64.Copylist, Uninstall.Copylist, SfxFxW7.CopyList, SRS3Fx.CopyList, Dolby.CopyFiles, PCEE4.CopyFiles
+AddReg    = HdAudModel.AddReg, HdAud2072x.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, W7SRS3.AddReg, DTSCoInst.AddReg, PCEE4_DHT_Keys.AddReg, PCEE4GlobalKeys.AddReg, PCEE4APO.AddReg, DS1APO.AddReg, DS1.Defaults.APOKeys.AddReg, DS1.DHT_Defaults.ProfileKeys.AddReg, DAX2APO.AddReg, MSFXAPO.AddReg
 AddProperty = HdAudBranding.AddProperty
-RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls
+RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls, Dolby.RegisterDlls, PCEE4.RegisterDlls
 
 [HdAud2072x.Array.NTamd64]
 Include=ks.inf,wdmaudio.inf
 Needs=KS.Registration,WDMAUDIO.Registration
 DelReg=HdAud.DelReg, DriverInfo.DelReg
-CopyFiles = HdAudModelV64.Copylist, Uninstall.Copylist, SfxFxW7.CopyList, SRS3Fx.CopyList
-AddReg    = HdAudModel.AddReg, HdAud2072x.Array.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, W7SRS3.AddReg, DTSCoInst.AddReg
+CopyFiles = HdAudModelV64.Copylist, Uninstall.Copylist, SfxFxW7.CopyList, SRS3Fx.CopyList, Dolby.CopyFiles, PCEE4.CopyFiles
+AddReg    = HdAudModel.AddReg, HdAud2072x.Array.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, W7SRS3.AddReg, DTSCoInst.AddReg, PCEE4_DHT_Keys.AddReg, PCEE4GlobalKeys.AddReg, PCEE4APO.AddReg, DS1APO.AddReg, DS1.Defaults.APOKeys.AddReg, DS1.DHT_Defaults.ProfileKeys.AddReg, DAX2APO.AddReg, MSFXAPO.AddReg
 AddProperty = HdAudBranding.AddProperty
-RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls
+RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls, Dolby.RegisterDlls, PCEE4.RegisterDlls
 
 [HdAud2072x3.NTamd64]
 Include=ks.inf,wdmaudio.inf
 Needs=KS.Registration,WDMAUDIO.Registration
 DelReg=HdAud.DelReg, DriverInfo.DelReg
-CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList
-AddReg    = HdAudModel.AddReg, HdAud2072x.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg
+CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList, Dolby.CopyFiles, PCEE4.CopyFiles
+AddReg    = HdAudModel.AddReg, HdAud2072x.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg, PCEE4_DHT_Keys.AddReg, PCEE4GlobalKeys.AddReg, PCEE4APO.AddReg, DS1APO.AddReg, DS1.Defaults.APOKeys.AddReg, DS1.DHT_Defaults.ProfileKeys.AddReg, DAX2APO.AddReg, MSFXAPO.AddReg
 AddProperty = HdAudBranding.AddProperty
-RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls
+RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls, Dolby.RegisterDlls, PCEE4.RegisterDlls
 
 [HdAud2072x3.Array.NTamd64]
 Include=ks.inf,wdmaudio.inf
 Needs=KS.Registration,WDMAUDIO.Registration
 DelReg=HdAud.DelReg, DriverInfo.DelReg
-CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList
-AddReg    = HdAudModel.AddReg, HdAud2072x.Array.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg
+CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList, Dolby.CopyFiles, PCEE4.CopyFiles
+AddReg    = HdAudModel.AddReg, HdAud2072x.Array.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg, PCEE4_DHT_Keys.AddReg, PCEE4GlobalKeys.AddReg, PCEE4APO.AddReg, DS1APO.AddReg, DS1.Defaults.APOKeys.AddReg, DS1.DHT_Defaults.ProfileKeys.AddReg, DAX2APO.AddReg, MSFXAPO.AddReg
 AddProperty = HdAudBranding.AddProperty
-RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls
+RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls, Dolby.RegisterDlls, PCEE4.RegisterDlls
 
 [HdAud2072x4.NTamd64]
 Include=ks.inf,wdmaudio.inf
 Needs=KS.Registration,WDMAUDIO.Registration
 DelReg=HdAud.DelReg, DriverInfo.DelReg
-CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList
-AddReg    = HdAudModel.AddReg, HdAud2072x.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg
+CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList, Dolby.CopyFiles, PCEE4.CopyFiles
+AddReg    = HdAudModel.AddReg, HdAud2072x.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg, PCEE4_DHT_Keys.AddReg, PCEE4GlobalKeys.AddReg, PCEE4APO.AddReg, DS1APO.AddReg, DS1.Defaults.APOKeys.AddReg, DS1.DHT_Defaults.ProfileKeys.AddReg, DAX2APO.AddReg, MSFXAPO.AddReg
 AddProperty = HdAudBranding.AddProperty
-RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls
+RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls, Dolby.RegisterDlls, PCEE4.RegisterDlls
 
 [HdAud2072x4.Array.NTamd64]
 Include=ks.inf,wdmaudio.inf
 Needs=KS.Registration,WDMAUDIO.Registration
 DelReg=HdAud.DelReg, DriverInfo.DelReg
-CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList
-AddReg    = HdAudModel.AddReg, HdAud2072x.Array.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg
+CopyFiles = HdAudModel.Copylist, Uninstall.Copylist, SfxFx.CopyList, SRS3Fx.CopyList, Dolby.CopyFiles, PCEE4.CopyFiles
+AddReg    = HdAudModel.AddReg, HdAud2072x.Array.AddReg, DriverInfo.AddReg, Couninstaller.AddReg, SRS3.AddReg, DTSCoInst.AddReg, PCEE4_DHT_Keys.AddReg, PCEE4GlobalKeys.AddReg, PCEE4APO.AddReg, DS1APO.AddReg, DS1.Defaults.APOKeys.AddReg, DS1.DHT_Defaults.ProfileKeys.AddReg, DAX2APO.AddReg, MSFXAPO.AddReg
 AddProperty = HdAudBranding.AddProperty
-RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls
+RegisterDlls=SfxFx.RegisterDlls, SRS3.RegisterDlls, Dolby.RegisterDlls, PCEE4.RegisterDlls
 
 [HdAud2072x.NTamd64.Services]
 AddService=CnxtHdAudService, 0x00000002, HdAud_Service_Install
@@ -321,6 +348,7 @@ HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\%UIPATH%, DisplayIcon,
 HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\%UIPATH%",UninstallString,,%16422%\CONEXANT\%UIPATH%\UIU64a.exe -U -G -Ichdrt.inf
 
 [HdAudModel.SSysFx.AddReg]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Audio","DisableProtectedAudioDG", %REG_DWORD%, 0x00000001
 HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
 ;;HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
 ;;HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SYSFX_PREMIX_CLSID%
@@ -349,19 +377,16 @@ HKR,"FX\\0","{0C709614-E770-0001-4000-018664542698},1020", %REG_DWORD%, 0x0000 ;
 HKR,"FX\\0",%PKEY_FX_ModeEffectClsid%,,%SYSFX_POSTMIX_CLSID%
 HKR,"FX\\0",%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 
-;; SRS SFX keys
-HKR,"FX\\0",%PKEY_FX_StreamEffectClsid%,,%SRS3_SYSFX_SFX_CLSID%
+;; CNXT SFX keys
+HKR,"FX\\0",%PKEY_FX_StreamEffectClsid%,,%SYSFX_PREMIX_CLSID%
 HKR,"FX\\0",%PKEY_SFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 
-;; SRS EFX keys
-HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%SRS3_SYSFX_EFX_CLSID%
-HKR,"FX\\0",%PKEY_EFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
-
 [HdAudModel.SSysFxW7.AddReg]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Audio","DisableProtectedAudioDG", %REG_DWORD%, 0x00000001
 HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
 HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SYSFX_PREMIX_CLSID%
 HKR,"FX\\0",%PKEY_FX_UiClsid%,,%FX_UI_CLSID%
-HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SRS3_SYSFX_LFX_CLSID%
 HKR,"FX\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0010
 HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX%, %REG_DWORD%, 0x0000
 HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_BEAMFORMING%, %REG_DWORD%, 0x0000
@@ -381,6 +406,223 @@ HKR,"EP\\0",%PKEY_SRS30_CodecId%,,0x0200
 HKR,"FX\\0","{0C709614-E770-0001-4000-018664542698},1017", %REG_DWORD%, 0x0001 ;;Disable Pause Ramping
 HKR,"FX\\0","{0C709614-E770-0001-4000-018664542698},1020", %REG_DWORD%, 0x0000 ;;Disable Pause Ramping 
 
+[HdAudModel.SSysFx.DAX2.AddReg]
+HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
+HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SYSFX_PREMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_UiClsid%,,%PAGE_MASTER_UI_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_0%,,%FX_UI_CLSID%
+;HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_1%,,%FX_DAX2_UI_CLSID%
+;HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%FX_DAX2_APO_CLSID%
+HKR,"FX\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0010
+HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_BEAMFORMING%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_AEC%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_Endpoint_Enable_GFX%, %REG_DWORD%, 0x0001
+HKR,"FX\\0",%PKEY_AudioEndpoint_Disable_SysFx%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
+
+HKR,"FX\\0","{0C709614-E770-0001-4000-018664542698},1025", %REG_DWORD%, 0x0000 ; Enable D3 mute audio
+
+;; Dolby DAX2 MFX keys and other keys
+;HKR,"FX\\0",%PKEY_FX_ModeEffectClsid%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_1%,,%FX_DAX2_UI_CLSID%
+HKR,"FX\\0",%PKEY_Enable_DolbyDAX2%, %REG_DWORD%, 0x00000001
+HKR,"FX\\0",%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
+
+[DAX2.DAP.AddReg]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Audio","DisableProtectedAudioDG", %REG_DWORD%, 0x00000001
+; Add DAPv2 version string here.
+HKR, "EP\\0", %PKEY_DAX2_EP_DAPV2_Version_String%,         ,%DAP_CPDP_VERSION%
+
+; Add DAP preset in property store.
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},0", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},1", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},2", %REG_BINARY%, 03,00,65,00,01,00,00,00,90,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},3", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},4", %REG_BINARY%, 03,00,03,26,01,00,00,00,a0,ff,\
+  ff,ff
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},5", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},6", %REG_BINARY%, 03,00,65,00,01,00,00,00,c0,fe,\
+  ff,ff
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},7", %REG_BINARY%, 03,00,65,00,01,00,00,00,c0,fe,\
+  ff,ff
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},8", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},9", %REG_BINARY%, 03,00,03,26,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},10", %REG_BINARY%, 03,00,65,00,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},11", %REG_BINARY%, 03,00,03,26,01,00,00,00,04,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},12", %REG_BINARY%, 03,00,65,00,01,00,00,00,0a,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},13", %REG_BINARY%, 41,00,08,29,01,00,00,00,14,00,\
+  00,00,14,00,00,00,41,00,00,00,88,00,00,00,df,00,00,00,4c,01,00,00,d3,01,00,\
+  00,7a,02,00,00,49,03,00,00,4a,04,00,00,88,05,00,00,14,07,00,00,fe,08,00,00,\
+  5d,0b,00,00,4f,0e,00,00,f6,11,00,00,7c,16,00,00,1a,1c,00,00,10,23,00,00,b2,\
+  2b,00,00,67,36,00,00,ae,43,00,00,14,00,00,00,75,00,00,00,85,00,00,00,bc,00,\
+  00,00,b0,00,00,00,8d,00,00,00,95,00,00,00,af,00,00,00,b9,00,00,00,b9,00,00,\
+  00,c8,00,00,00,ec,00,00,00,f2,00,00,00,e4,00,00,00,d5,00,00,00,b6,00,00,00,\
+  84,00,00,00,6e,00,00,00,44,00,00,00,e5,ff,ff,ff,10,ff,ff,ff
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},14", %REG_BINARY%, 03,00,65,00,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},15", %REG_BINARY%, 03,00,00,00,01,00,00,00,c0,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},16", %REG_BINARY%, 03,00,00,00,01,00,00,00,c8,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},17", %REG_BINARY%, 03,00,03,26,01,00,00,00,10,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},18", %REG_BINARY%, 41,00,9b,64,01,00,00,00,14,00,\
+  00,00,14,00,00,00,2f,00,00,00,8d,00,00,00,ea,00,00,00,48,01,00,00,d5,01,00,\
+  00,90,02,00,00,4c,03,00,00,07,04,00,00,21,05,00,00,98,06,00,00,ca,08,00,00,\
+  b8,0b,00,00,a6,0e,00,00,50,12,00,00,b5,16,00,00,d5,1b,00,00,28,23,00,00,f2,\
+  2b,00,00,33,36,00,00,e8,4c,00,00,14,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,14,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,14,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,14,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,14,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,14,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,14,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,14,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},19", %REG_BINARY%, 03,00,65,00,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},20", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},21", %REG_BINARY%, 41,00,08,29,01,00,00,00,14,00,\
+  00,00,14,00,00,00,2f,00,00,00,8d,00,00,00,ea,00,00,00,48,01,00,00,d5,01,00,\
+  00,90,02,00,00,4c,03,00,00,07,04,00,00,21,05,00,00,98,06,00,00,ca,08,00,00,\
+  b8,0b,00,00,a6,0e,00,00,50,12,00,00,b5,16,00,00,d5,1b,00,00,28,23,00,00,f2,\
+  2b,00,00,33,36,00,00,e8,4c,00,00,14,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},22", %REG_BINARY%, 41,00,00,00,01,00,00,00,14,00,\
+  00,00,14,00,00,00,2f,00,00,00,8d,00,00,00,ea,00,00,00,48,01,00,00,d5,01,00,\
+  00,90,02,00,00,4c,03,00,00,07,04,00,00,21,05,00,00,98,06,00,00,ca,08,00,00,\
+  b8,0b,00,00,a6,0e,00,00,50,12,00,00,b5,16,00,00,d5,1b,00,00,28,23,00,00,f2,\
+  2b,00,00,33,36,00,00,e8,4c,00,00,14,00,00,00,40,ff,ff,ff,40,ff,ff,ff,40,ff,\
+  ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,\
+  ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,\
+  40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,40,ff,ff,ff,14,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,14,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},23", %REG_BINARY%, 03,00,65,00,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},24", %REG_BINARY%, 03,00,65,00,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},25", %REG_BINARY%, 03,00,65,00,01,00,00,00,60,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},26", %REG_BINARY%, 03,00,65,00,01,00,00,00,0c,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},27", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},28", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},29", %REG_BINARY%, 03,00,65,00,01,00,00,00,0a,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},30", %REG_BINARY%, 03,00,65,00,01,00,00,00,c8,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},31", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},32", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},33", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},34", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},35", %REG_BINARY%, 03,00,65,00,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},36", %REG_BINARY%, 03,00,03,26,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},37", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},38", %REG_BINARY%, 03,00,03,26,01,00,00,00,07,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},39", %REG_BINARY%, 03,00,00,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},47", %REG_BINARY%, 03,00,03,26,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},41", %REG_BINARY%, 03,00,81,24,01,00,00,00,01,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},42", %REG_BINARY%, 41,00,03,26,01,00,00,00,23,00,\
+  00,00,a0,00,00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},43", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},44", %REG_BINARY%, 03,00,65,00,01,00,00,00,00,00,\
+  00,00
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},45", %REG_BINARY%, 41,00,35,7e,01,00,00,00,03,00,\
+  00,00,03,00,00,00,e0,ff,ff,ff,70,ff,ff,ff,40,ff,ff,ff
+HKR, "EP\\0", "{f112024a-fe30-42a8-80ab-8dd825a06f78},46", %REG_BINARY%, 41,00,00,00,01,00,00,00,5e,00,\
+  00,00,d5,01,00,00
+
+[HdAudModel.SSysFx.PCEE4.AddReg]
+HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
+HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SYSFX_PREMIX_CLSID%
+HKR,"FX\\0",%PKEY_FX_UiClsid%,,%PAGE_MASTER_UI_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_0%,,%FX_UI_CLSID%
+;HKR,"FX\\0",%PCEE4_FORMFACTOR_OVERRIDE%,%REG_DWORD%, 0x0001
+HKR,"FX\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0010
+HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_BEAMFORMING%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_AEC%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_Endpoint_Enable_GFX%, %REG_DWORD%, 0x0001
+HKR,"FX\\0",%PKEY_AudioEndpoint_Disable_SysFx%, %REG_DWORD%, 0x0000
+HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
+
+HKR,"FX\\0", "{01F0E753-3A7A-4b21-A904-D06826245E43},6000", %REG_DWORD%, 0x00000000 ; PKEY_3D_HP_Enable
+HKR,"FX\\0", "{01F0E753-3A7A-4b21-A904-D06826245E43},6001", %REG_DWORD%, 0x00000010 ; PKEY_3D_HP_Spread
+HKR,"FX\\0", "{01F0E753-3A7A-4b21-A904-D06826245E43},6002", %REG_DWORD%, 0x00000010 ; PKEY_3D_HP_RoomSize
+
+HKR,"FX\\0","{0C709614-E770-0001-4000-018664542698},1023", %REG_DWORD%, 0x0000 ; Enable SysPb EQ under VoIP.
+
+;; CNXT MFX keys
+;HKR,"FX\\0",%PKEY_FX_ModeEffectClsid%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
+
+;; Dolby DS1 SFX keys
+;HKR,"FX\\0",%PKEY_FX_StreamEffectClsid%,,%SYSFX_ANALOG_STREAM_CLSID% ;; PKEY_FX_StreamEffectClsid need to be used here since Dolby's APO has to be installed as an SFX for Win 8.1
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_2%,,%SYSFX_ANALOG_UI_CLSID%
+HKR,"FX\\0",%PKEY_SFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
+
+;; Dolby PCEE4 SFX keys
+;HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%PCEE4_HT_POSTMIX_CLSID% ;; PCEE4 Premix
+;HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%PCEE4_HT_PREMIX_CLSID% ;; PCEE4 Postmix
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_3%,,%PCEE4_UI_CLSID% ;; PCEE4 UI
+HKR,"FX\\0",%PKEY_SFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
+
+
 [SRS3.AddReg]
 ;; For Speaker
 HKLM,%SRS_REGISTRY_SPK%,SrsApoTechDllPath,,%11%\SRSLabs\sltech64.dll ; SRS Dll Allocation
@@ -394,15 +636,15 @@ HKLM,%SRS_REGISTRY_HP%,"{66E88EA2-A239-4e1f-82FF-2F45359AEC94},9",%REG_DWORD%,0x
 HKLM,%SRS_REGISTRY_HP%\SRS Premium Sound,"ControlPanelPath",,"C:\Program Files (x86)\DTS, Inc\DTS Studio Sound\APO3GUI.exe"
 HKLM,%SRS_REGISTRY_HP%\SRS Premium Sound,"ControlPanelArg",,""
 
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Priority",%REG_DWORD%,0x00000010
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Disable",%REG_DWORD%,0x00000000
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Group",%REG_DWORD%,0x00000000
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"ORDER",%REG_DWORD%,0x00002000
-HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"CheckApp",%REG_DWORD%,0x00000000
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Priority",%REG_DWORD%,0x00000010
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Disable",%REG_DWORD%,0x00000000
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"Group",%REG_DWORD%,0x00000000
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"ORDER",%REG_DWORD%,0x00002000
+;HKR,%RenPluginGFX%\%SRS3_SYSFX_MFX_CLSID%,"CheckApp",%REG_DWORD%,0x00000000
 
 HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\SRSLabs\slcnt64.dll,,0x00000022
 HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\SRSLabs\sluapo64.dll,,0x00000022
@@ -432,10 +674,16 @@ HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_SPEAKER%
 HKR,"EP\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0010
 
 [HdAudModel.HSysFx.AddReg]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Audio","DisableProtectedAudioDG", %REG_DWORD%, 0x00000001
 HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
 ;HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
 ;HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SRS3_SYSFX_LFX_CLSID%
-HKR,"FX\\0",%PKEY_FX_UiClsid%,,%CNXT_UI_CLSID%
+;HKR,"FX\\0",%PKEY_FX_UiClsid%,,%CNXT_UI_CLSID%
+HKR,"FX\\0",%PKEY_FX_UiClsid%,,%PAGE_MASTER_UI_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_0%,,%CNXT_UI_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_1%,,%FX_DAX2_UI_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_2%,,%SYSFX_ANALOG_UI_CLSID%
+HKR,"FX\\0",%PKEY_PAGE_MASTER_PAGE_3%,,%PCEE4_UI_CLSID% ;; PCEE4 UI
 HKR,"FX\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0050
 HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX%, %REG_DWORD%, 0x0000
 HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_BEAMFORMING%, %REG_DWORD%, 0x0000
@@ -450,8 +698,13 @@ HKR,"EP\\0",%PKEY_SRS30_APOLocation%,,%16419%\SRS Labs\APO
 HKR,"EP\\0",%PKEY_SRS30_HWIdentifier%,,
 HKR,"EP\\0",%PKEY_SRS30_CodecId%,,0x0200
 
+HKR,"FX\\0",%PKEY_FX_ModeEffectClsid%,,%CT_SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_GFX_APO1%,,%SRS3_SYSFX_MFX_CLSID%
+HKR,"FX\\0",%PKEY_GFX_APO2%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_APO_NUM%,0x10001,2
+
 ;; CNXT MFX keys
-HKR,"FX\\0",%PKEY_FX_ModeEffectClsid%,,%SYSFX_POSTMIX_CLSID%
+;HKR,"FX\\0",%PKEY_FX_ModeEffectClsid%,,%SYSFX_POSTMIX_CLSID%
 HKR,"FX\\0",%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 
 ;; SRS SFX keys
@@ -501,8 +754,9 @@ HKR,"FX\\0",%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO
 ;;HKR,"FX\\0",%PKEY_EFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
 
 [HdAudModel.HSysFxW7.AddReg]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Audio","DisableProtectedAudioDG", %REG_DWORD%, 0x00000001
 HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
-HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
+;HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
 HKR,"FX\\0",%PKEY_FX_UiClsid%,,%FX_UI_CLSID%
 HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SRS3_SYSFX_LFX_CLSID%
 HKR,"FX\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0050
@@ -518,6 +772,11 @@ HKR,"EP\\0",%PKEY_SRS30_APOLocation%,,%16419%\SRS Labs\APO
 ;;HKR,"EP\\0",%PKEY_SRS30_XmlLocation%,,%16419%\SRS Labs\APO\slconfig.xml
 HKR,"EP\\0",%PKEY_SRS30_HWIdentifier%,,
 HKR,"EP\\0",%PKEY_SRS30_CodecId%,,0x0200
+
+HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%CT_SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_GFX_APO1%,,%SRS3_SYSFX_MFX_CLSID%
+HKR,"FX\\0",%PKEY_GFX_APO2%,,%SYSFX_POSTMIX_CLSID%
+HKR,"FX\\0",%PKEY_APO_NUM%,0x10001,2
 
 [HdAudModel.EHSysFx.AddReg]
 HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_HEADPHONES%
@@ -559,16 +818,47 @@ HKR,"EP\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0020
 CX64BP30.dll
 CxPageMaster64.dll
 CSpkExt64.dll
+MCWrp64.dll
 
+[Dolby.CopyFiles]
+DolbyDAX2APOv211.dll
+DolbyDAX2APOProp.dll
+HiFiDAX2API.dll
+DDPO64A.dll
+DDPD64A.dll
+DDPP64A.dll
+DDPA64.dll
+
+[PCEE4.CopyFiles]
+EEL64A.dll
+EED64A.dll
+EEG64A.dll
+EEA64A.dll
+EEP64A.dll
+
+[Dolby.RegisterDlls]
+11,,DDPO64A.dll,1
+11,,DDPD64A.dll,1
+11,,DDPP64A.dll,1
+11,,DDPA64.dll,1
+
+[PCEE4.RegisterDlls]
+11,,EEL64A.dll,1
+11,,EED64A.dll,1
+11,,EEG64A.dll,1
+11,,EEA64A.dll,1
+11,,EEP64A.dll,1
 
 [SfxFx.RegisterDlls]
 11,,CX64BP30.dll,1
 11,,CxPageMaster64.dll,1
 11,,CSpkExt64.dll,1
+11,,MCWrp64.dll,1
 
 [SfxFxW7.CopyList]
 CX64BP30.dll
 CxPageMaster64.dll
+MCWrp64.dll
 
 [SRS3Fx.CopyList]
 slcnt64.dll
@@ -705,6 +995,201 @@ HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\sluapo64.dll,,
 HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\sltech64.dll,,0x00000022
 HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\slprp64.dll,,0x00000022
 HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\slcnt64.dll.dll,,0x00000022
+
+[DAX2APO.AddReg]
+; APO COM registration
+HKCR,CLSID\%FX_DAX2_APO_CLSID%,,,%FX_DAX2_FriendlyName%
+HKCR,CLSID\%FX_DAX2_APO_CLSID%\InProcServer32,,,%11%\DolbyDAX2APOv211.dll
+HKCR,CLSID\%FX_DAX2_APO_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; Effects UI page COM registration
+HKCR,CLSID\%FX_DAX2_UI_CLSID%,,,"CplPage Class"
+HKCR,CLSID\%FX_DAX2_UI_CLSID%\InProcServer32,,,%11%\DolbyDAX2APOProp.dll
+HKCR,CLSID\%FX_DAX2_UI_CLSID%\InProcServer32,ThreadingModel,,"Apartment"
+
+; HiFi API COM registration
+HKCR,CLSID\%FX_DAX2_HIFI_API_CLSID%,,,"HiFiDAX2API Class"
+HKCR,CLSID\%FX_DAX2_HIFI_API_CLSID%\InProcServer32,,,%11%\HiFiDAX2API.dll
+HKCR,CLSID\%FX_DAX2_HIFI_API_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; APO registration
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "FriendlyName", ,%FX_DAX2_FriendlyName%
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "Copyright", ,%DolbyCopyRight%
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MajorVersion", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MinorVersion", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "Flags", 0x00010001, 0x0000000c
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MinInputConnections", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MaxInputConnections", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MinOutputConnections", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MaxOutputConnections", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "MaxInstances", 0x00010001, 0xffffffff
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "NumAPOInterfaces", 0x00010001, 1
+HKCR,AudioEngine\AudioProcessingObjects\%FX_DAX2_APO_CLSID%, "APOInterface0", ,"{ACA32C80-30EC-4D96-9022-CC6A4F70EAE2}"
+
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\DolbyDAX2APOv211.dll,,0x00000022
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\DolbyDAX2APOProp.dll,,0x00000022
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\HiFiDAX2API.dll,,0x00000022
+
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"Priority",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"Disable",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"Group",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"ORDER",%REG_DWORD%,0x00000400
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"RequireSRC",%REG_DWORD%,0x0001BB80 ;;Enable SRC function 
+HKR,%RenPluginGFX%\%FX_DAX2_APO_CLSID%,"CheckApp",%REG_DWORD%,0x00000001
+
+[DAX2APO.AddReg.Security]
+"D:(A;;GA;;;WD)"
+
+[DS1.Defaults.APOKeys.AddReg]
+; Stream effect APO COM registration
+HKCR,CLSID\%SYSFX_ANALOG_STREAM_CLSID%,,,%SYSFX_ANALOG_FriendlyName_SFX%
+HKCR,CLSID\%SYSFX_ANALOG_STREAM_CLSID%\InProcServer32,,,%11%\DDPO64A.dll
+HKCR,CLSID\%SYSFX_ANALOG_STREAM_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+; Effects UI page COM registration
+HKCR,CLSID\%SYSFX_ANALOG_UI_CLSID%,,,"Dolby Digital Plus Home Theater Property Page Class"
+HKCR,CLSID\%SYSFX_ANALOG_UI_CLSID%\InProcServer32,,,%11%\DDPP64A.dll
+HKCR,CLSID\%SYSFX_ANALOG_UI_CLSID%\InProcServer32,ThreadingModel,,"Apartment"
+
+[DS1.DAA_Defaults.ProfileKeys.AddReg]
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{8A92D74F-1332-43f6-AB72-01C0E37F1CF0},0", %REG_DWORD%, 0x0000021f   ;; 0x0000021f is DS1 Advanced Audio Master Enable
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},68", %REG_DWORD%, 0x00000002  ; Limit DS1 SFX APO instances to 2
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\DynamicKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},0", %REG_DWORD%, 0x0001          ; FormFactor SPK
+
+;; Application version
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},503", %REG_DWORD%, "1"          ; Version_3
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},502", %REG_DWORD%, "4"          ; Version_2
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},501", %REG_DWORD%, "0"          ; Version_1
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},500", %REG_DWORD%, "1"          ; Version_0
+
+[DS1.DAA_Defaults.ProfileKeys.AddReg.Security]
+"D:(A;;GA;;;WD)"
+
+[DS1.DHT_Defaults.ProfileKeys.AddReg]
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{8A92D74F-1332-43f6-AB72-01C0E37F1CF0},0", %REG_DWORD%, 0x000003ff   ;; 0x000003ff is DS1 Home Theater Master Enable
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},68", %REG_DWORD%, 0x00000002  ; Limit DS1 SFX APO instances to 2
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\DynamicKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},0", %REG_DWORD%, 0x0001          ; FormFactor SPK
+
+;; Application version
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},503", %REG_DWORD%, "1"          ; Version_3
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},502", %REG_DWORD%, "4"          ; Version_2
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},501", %REG_DWORD%, "0"          ; Version_1
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},500", %REG_DWORD%, "1"          ; Version_0
+
+[DS1.DHT_Defaults.ProfileKeys.AddReg.Security]
+"D:(A;;GA;;;WD)"
+
+[DS1.DelReg] ; Erase stale DS1 dynamic and static property keys when reinstalling. Don't delete SOFTWARE\Dolby\DolbyDigitalPlus\AppKeys
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\StaticKeys"
+HKLM, "SOFTWARE\Dolby\DolbyDigitalPlus\DynamicKeys"
+
+[PCEE4_DHT_Keys.AddReg]
+;; PCEE4 Master enables
+HKLM, "Software\Dolby\PCEE4\StaticKeys",  "{8A92D74F-1332-43f6-AB72-01C0E37F1CF0},0",   %REG_DWORD%, 0x000003FF; Premium SKU: Dolby Home Theater v4
+HKLM, "SOFTWARE\Dolby\PCEE4\DynamicKeys"
+HKLM, "SOFTWARE\Dolby\PCEE4\AppKeys"
+
+[PCEE4_DHT_Keys.AddReg.Security]
+"D:(A;;GA;;;WD)"
+
+[PCEE4_DAA_Keys.AddReg]
+;; PCEE4 Master enables
+HKLM, "Software\Dolby\PCEE4\StaticKeys",  "{8A92D74F-1332-43f6-AB72-01C0E37F1CF0},0",   %REG_DWORD%, 0x0000021f; Premium SKU: Dolby Advance Audio 2
+HKLM, "SOFTWARE\Dolby\PCEE4\DynamicKeys"
+HKLM, "SOFTWARE\Dolby\PCEE4\AppKeys"
+
+[PCEE4_DAA_Keys.AddReg.Security]
+"D:(A;;GA;;;WD)"
+
+[PCEE4GlobalKeys.AddReg]
+
+;;
+;; PCEE4 property keys
+;;
+;; From this point to the end of this section, the property keys shown here are all set to the default values, which will be read
+;; if no registry key is present in the INF.
+;;
+;; Therefore, if you remove all of the following keys from the INF file, you will get identical behavior because these keys are the same values as the registry defaults.
+;; Alternatively, you can use them as a starting point for creating a customized set of defaults
+;; Remember that all of these property keys are global, so they should all be kept in a single INF section that is applied to all KSNODETYPE endpoints.
+;; The same keys should not be set from within more than one section of an INF file
+
+;	Set Dolby Enable On
+HKLM, "Software\Dolby\PCEE4\DynamicKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},1",   %REG_DWORD%, 0x00000000; PCEE4_DOLBY_ENABLE_PID
+
+;; The following entries are commented out because they are the default values. uncomment and change them if you want something other than the default value
+;; HKLM, "Software\Dolby\PCEE4\DynamicKeys", "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},6",   %REG_DWORD%, 0x00000000; PCEE4_UPMIX_TO_LFE_DYNAMIC_ENABLE_PID
+;; HKLM, "Software\Dolby\PCEE4\StaticKeys",  "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},55",  %REG_DWORD%, 0x00000000; PCEE4_MONO_SPEAKER_FILL_PID
+;; HKLM, "Software\Dolby\PCEE4\StaticKeys",  "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},56",  %REG_DWORD%, 0x00000000; PCEE4_UPMIX_TO_LFE_ENABLE_PID
+
+;; Uncomment the profile (Movie, Music, Game) that you want to use as the default. Movie is the default if there is no value specified
+HKLM,  "Software\Dolby\PCEE4\DynamicKeys",   "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},2",   %REG_DWORD%, 0x00000000; Movie PCEE4_ACTIVE_PROFILE_PID (0 = Movie, 1 = Music, 2 = Game)
+
+[PCEE4GlobalKeys.DelReg]
+HKLM, "Software\Dolby\PCEE4\StaticKeys"
+HKLM, "Software\Dolby\PCEE4\DynamicKeys"
+
+[PCEE4APO.AddReg]
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"Priority",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"Disable",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"Group",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"ORDER",%REG_DWORD%,0x00000400
+HKR,%RenPluginGFX%\%PCEE4_HT_PREMIX_CLSID%,"CheckApp",%REG_DWORD%,0x00000001
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"Priority",%REG_DWORD%,0x00000010
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"Disable",%REG_DWORD%,0x00000000
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"Group",%REG_DWORD%,0x00000000
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"ORDER",%REG_DWORD%,0x00000400
+HKR,%RenPluginLFX%\%PCEE4_HT_POSTMIX_CLSID%,"CheckApp",%REG_DWORD%,0x00000001
+
+
+[DS1APO.AddReg]
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"Priority",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"Disable",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"Group",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"ORDER",%REG_DWORD%,0x00000400
+HKR,%RenPluginGFX%\%SYSFX_ANALOG_POSTMIX_CLSID%,"CheckApp",%REG_DWORD%,0x00000001
+
+[DS1CoInst.AddReg]
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\DDPA64.dll,,0x00000022
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\DDPD64A.dll,,0x00000022
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\DDPO64A.dll,,0x00000022
+HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\DDPP64A.dll,,0x00000022
+
+[MSFXAPO.AddReg]
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"Priority",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"Disable",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"Group",%REG_DWORD%,0x00000000
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"ORDER",%REG_DWORD%,0x00000400
+HKR,%RenPluginGFX%\%FX_PREMIX_CLSID%,"CheckApp",%REG_DWORD%,0x00000001
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"Priority",%REG_DWORD%,0x00000010
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"SupportAPOs",%REG_DWORD%,0x00000007
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"SupportJacks",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"SupportFormats",%REG_DWORD%,0xFFFFFFFF
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"Requirements",%REG_DWORD%,0x00000010
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"Disable",%REG_DWORD%,0x00000000
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"Group",%REG_DWORD%,0x00000000
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"ORDER",%REG_DWORD%,0x00000400
+HKR,%RenPluginLFX%\%FX_POSTMIX_CLSID%,"CheckApp",%REG_DWORD%,0x00000001
 
 [HdAud2072x.AddReg]
 ;; Tip_detect_wait_timer_1sec_Headset_detection_function_Apple_Nokia 
@@ -1029,7 +1514,7 @@ HKR,Settings\OEM\FlexSettings,Flex_CDCaptureVolume,0x00000001,64,00,00,00
 HKR,%EPattributePath%\EPid1A,IsMicArray,1,00    ;MicArray Endpoint
 
 [HdAudBranding.AddProperty]
-DeviceVendorWebSite,,,,"http://www.conexant.com"
+DeviceVendorWebSite,,,,"http://blog.naver.com/kgtmaven"
 
 [HdAud.DelReg]
 HKR, Drivers
@@ -1809,12 +2294,12 @@ HKR,,CLSID,,%Proxy.CLSID%
 
 [HdAudModel.RearLineOutTopo]
 DelReg = APO.DelReg
-AddReg = HdAudModel.RearLineOutTopo.AddReg, HdAudModel.SSysFx.AddReg, HdAudModel.ESSysFx.AddReg
+AddReg = HdAudModel.RearLineOutTopo.AddReg, HdAudModel.SSysFx.AddReg, HdAudModel.ESSysFx.AddReg, HdAudModel.SSysFx.PCEE4.AddReg, HdAudModel.SSysFx.DAX2.AddReg, DAX2.DAP.AddReg
 AddReg = EPProperties.Addreg
 
 [HdAudModel.RearLineOutTopoW7]
 DelReg = APO.DelReg
-AddReg = HdAudModel.RearLineOutTopo.AddReg, HdAudModel.SSysFxW7.AddReg, HdAudModel.ESSysFx.AddReg
+AddReg = HdAudModel.RearLineOutTopo.AddReg, HdAudModel.SSysFxW7.AddReg, HdAudModel.ESSysFx.AddReg, HdAudModel.SSysFx.PCEE4.AddReg, HdAudModel.SSysFx.DAX2.AddReg, DAX2.DAP.AddReg
 AddReg = EPProperties.Addreg
 
 [HdAudModel.RearLineOutTopo_SF]
@@ -1824,7 +2309,7 @@ AddReg = EPProperties.Addreg
 
 [HdAudModel.RearLineOutTopo_SRS]
 DelReg = APO.DelReg
-AddReg = HdAudModel.RearLineOutTopo.AddReg, HdAudModel.SSysFx.SRS.AddReg, HdAudModel.ESSysFx.AddReg
+AddReg = HdAudModel.RearLineOutTopo.AddReg, HdAudModel.SSysFx.PCEE4.AddReg, HdAudModel.SSysFx.DAX2.AddReg, HdAudModel.ESSysFx.AddReg, DAX2.DAP.AddReg, HdAudModel.ESSysFx.AddReg
 AddReg = EPProperties.Addreg
 
 ; Front panel headphone
@@ -2150,6 +2635,7 @@ HKR,,FriendlyName,,%StereoMixTopoName%
 HKR,,CLSID,,%Proxy.CLSID%
 
 [EPProperties.AddReg]
+HKR,"EP\\0","{6CA6A085-3041-482B-9113-C61E7F250356},0",,"2.1.1"
 HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_ANY%
 HKR,"EP\\0",%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,%REG_DWORD%,0x00000001
 ;; 24-bit 48Khz
@@ -2454,7 +2940,7 @@ HKR,"FX\\0",%DesDigiMicBoost_CLSID%, %REG_DWORD%, 0x4A4A00
 
 [Strings]
 MediaCategories="SYSTEM\CurrentControlSet\Control\MediaCategories"
-CNXT="Conexant"
+CNXT="Modded by kgtmaven"
 Conexant.Mfg="Conexant"
 PublisherName="Conexant Systems"
 
@@ -2687,6 +3173,14 @@ PAGE_MASTER_UI_CLSID	= "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB}"   ; Page Master 
 PKEY_PAGE_MASTER_PAGE_0 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},0" ; First Page
 PKEY_PAGE_MASTER_PAGE_1 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},1" ; Second Page
 PKEY_PAGE_MASTER_PAGE_2 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},2" ; 3rd Page
+PKEY_PAGE_MASTER_PAGE_3 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},3" ; 4th Page
+PKEY_PAGE_MASTER_PAGE_4 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},4" ; 5th Page
+PKEY_PAGE_MASTER_PAGE_5 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},5" ; 6th Page
+PKEY_PAGE_MASTER_PAGE_6 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},6" ; 7th Page
+PKEY_PAGE_MASTER_PAGE_7 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},7" ; 8th Page
+PKEY_PAGE_MASTER_PAGE_8 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},8" ; 9th Page
+PKEY_PAGE_MASTER_PAGE_9 = "{AA747400-B9F8-4D7F-B41C-F8CF3047A0DB},9" ; 10th Page
+
 
 ; For Windows 8.1 Defines
 PKEY_FX_StreamEffectClsid   = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},5"
@@ -2717,6 +3211,22 @@ CXFx_VOIP_PLUGIN_CLSID = "{0000000d-0000-0001-4000-018664542698}"
 ;Cnxt and Forte Interface
 ;
 DesDigiMicBoost_CLSID = "{4d8b5a4e-4f8b-4be5-b109-4b7214611257},2"
+
+; Creative Chaining Property Keys
+PKEY_APO_NUM           = "{d46c4dfd-28b8-4ab8-a45d-70399958ef26},0"
+PKEY_GFX_APO1          = "{e1032fc5-ddab-4c4b-9940-8a6be78a4db6},0"
+PKEY_LFX_APO1          = "{3a418faa-93d7-4bd8-a0d3-c784ad25476a},0"
+PKEY_UI_APO1           = "{9a708e6f-a639-4f1c-9206-62b7018853a4},0"
+PKEY_GFX_APO2          = "{e1032fc5-ddab-4c4b-9940-8a6be78a4db6},1"
+PKEY_LFX_APO2          = "{3a418faa-93d7-4bd8-a0d3-c784ad25476a},1"
+PKEY_UI_APO2           = "{9a708e6f-a639-4f1c-9206-62b7018853a4},1"
+
+; Creative Chainer GUIDs 
+CT_SYSFX_POSTMIX_CLSID  = "{EC1F506D-6205-4ec8-AF7E-5ECA8E7E92BF}"
+CT_SYSFX_UI_CLSID       = "{9BC05C6A-7171-4bcc-A124-0FE140E12F75}"
+CT_SYSFX_PREMIX_CLSID   = "{AD0F1567-A5D2-415e-9FC8-168F5A26C8A3}"
+
+NUM_APO_SET       = 0x2
 
 ;; Sound Edge V4
 PKEY_SFEPID = "{98463DF4-41A5-4335-9D80-0A8E25C3BE04},0"
@@ -2959,8 +3469,40 @@ SRS3_SYSFX_MFX_CLSID  = "{5B98E1AC-A670-4311-B4F8-DC25E30CFBFF}"
 SRS3_SYSFX_EFX_CLSID  = "{93520346-FA48-4F56-8CB0-D92CC1775E37}"
 SRS3_SYSFX_LFX_CLSID  = "{CB0EAF7D-3991-4921-AA30-CD32798EDC3A}"
 
+; Dolby PCEE4 Defines
+PCEE4_HT_PREMIX_CLSID           = "{BC8E3B67-3306-4eef-B230-6798E9A67F0B}" ; analog driver Dolby Home Theater v4
+PCEE4_HT_POSTMIX_CLSID          = "{56E00778-C664-4bb5-AA2B-CA6F14840BB3}" ; analog driver premium
+PCEE4_UI_CLSID                  = "{C53E5AAF-5F6F-41c2-9F63-ADEBBC9B6B64}" ; analog driver mainstream
+PCEE4_FORMFACTOR_OVERRIDE       = "{DD0DF94B-53A2-4a92-854E-91F42E28FD7B},0"; analog driver form factor override
+
+; Conexant Speaker Properties Page Extensions for Dolby to replace the MS Enhancement page
+CNXT_UI_CLSID = "{5E344C16-0672-4a5c-88E7-25D7F3026C87}"
+
+; Dolby DS1 Defines
+SYSFX_ANALOG_STREAM_CLSID     = "{AE0B08BE-FF0E-4FF6-BEC5-24BFD96B4050}" ; Analog APO as SFX
+SYSFX_ANALOG_PREMIX_CLSID     = "{AE0B08BE-FF0E-4FF6-BEC5-24BFD96B4050}" ; Analog APO as LFX
+SYSFX_ANALOG_POSTMIX_CLSID    = "{AE0B08BE-FF0E-4FF6-BEC5-24BFD96B4050}" ; Analog APO as GFX
+SYSFX_ANALOG_UI_CLSID         = "{DDE20A40-F390-4616-AE98-2BA9E8C70744}" ; Analog Prop Page
+SYSFX_ANALOG_FriendlyName_LFX = "Dolby Digital Plus Advanced Audio LFX"
+SYSFX_ANALOG_FriendlyName_SFX = "Dolby Digital Plus Advanced Audio SFX "
+
+; Dolby DAX2 Defines
+DolbyCopyRight="Copyright (c) Dolby Laboratories, Inc. All Rights Reserved"
+
+FX_DAX2_APO_CLSID							= "{BA99D4DB-9AAF-428C-A024-6FCF768A7568}"
+FX_DAX2_UI_CLSID                            = "{C17E9E93-FB60-4E2C-8F63-E7DD39AF78B3}" 
+FX_DAX2_HIFI_API_CLSID                      = "{ADFC2A09-C233-440C-822F-716E9966961F}"
+
+PKEY_DAX2_EP_DAPV2_Version_String			= "{6CA6A085-3041-482B-9113-C61E7F250356},0"
+DAP_CPDP_VERSION							= "2.1.1"
+
+PKEY_Enable_DolbyDAX2			= "{DB619741-3240-42A9-B35B-66460BED49BA},0"
+PKEY_DolbyDAX2_FormFactor		= "{DD0DF94B-53A2-4A92-854E-91F42E28FD7B},0"
+
+FX_DAX2_FriendlyName                   = "Dolby Audio X2"
+
 ; History Information
-DriverMfgr="Conexant"
+DriverMfgr="Modded by kgtmaven"
 ProductName = "Conexant High Definition SmartAudio"
 DriverVersionID="8.66.57"
 DriverBuildDate="12/15/2016"
