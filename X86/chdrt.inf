@@ -18,7 +18,7 @@ Signature="$Windows NT$"
 Class=MEDIA
 ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
 Provider=%CNXT%
-DriverVer = 11/24/2016,8.66.57.51
+DriverVer = 12/15/2016,8.66.57.54
 CatalogFile=chdrt.cat
 
 [DestinationDirs]
@@ -54,6 +54,7 @@ CHDRT32.sys=222
 CHDRT32W7.sys=222
 UIU32a.exe=222
 UCI32A140.dll=222
+CSpkExt32.dll=222
 mixer.ini=222
 altmixer.ini=222
 CX32BP30.dll=222
@@ -76,6 +77,7 @@ sluapo32.dll=222
 CHDRT32.sys=SignatureAttributes.DRM
 CHDRT32W7.sys=SignatureAttributes.DRM
 CX32BP30.dll=SignatureAttributes.PETrust
+CSpkExt32.dll=SignatureAttributes.PETrust
 
 CxPageMaster32.dll=SignatureAttributes.PETrust
 ; SRS V3
@@ -318,7 +320,8 @@ HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\%UIPATH%",UninstallStr
 HKR,"FX\\0",%PKEY_ItemNameDisplay%,,%SYSFX_FriendlyName%
 ;;HKR,"FX\\0",%PKEY_FX_PostMixClsid%,,%SYSFX_POSTMIX_CLSID%
 ;;HKR,"FX\\0",%PKEY_FX_PreMixClsid%,,%SYSFX_PREMIX_CLSID%
-HKR,"FX\\0",%PKEY_FX_UiClsid%,,%FX_UI_CLSID%
+HKR,"FX\\0",%PKEY_FX_UiClsid%,,%CNXT_UI_CLSID%
+;;HKR,"FX\\0",%PKEY_FX_UiClsid%,,%FX_UI_CLSID%
 HKR,"FX\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0010
 HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX%, %REG_DWORD%, 0x0000
 HKR,"FX\\0",%PKEY_Endpoint_Enable_LFX_BEAMFORMING%, %REG_DWORD%, 0x0000
@@ -551,11 +554,13 @@ HKR,"EP\\0",%PKEY_Endpoint_ID%, %REG_DWORD%, 0x0020
 [SfxFx.CopyList]
 CX32BP30.dll
 CxPageMaster32.dll
+CSpkExt32.dll
 
 
 [SfxFx.RegisterDlls]
 11,,CX32BP30.dll,1
 11,,CxPageMaster32.dll,1
+11,,CSpkExt32.dll,1
 
 [SfxFxW7.CopyList]
 CX32BP30.dll
@@ -689,8 +694,7 @@ HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\SEHDRA32.dll,,
 HKLM,Software\SoundResearch
 
 [SRS3.AddReg.Security]
-; Grant access right to all accounts 
-"D:P(A;;GA;;;SY)(A;;GA;;;BA)(A;;GA;;;BU)"
+"G:BUD:(A;CIOI;KA;;;BU)"
 
 [DTSCoInst.AddReg]
 HKLM, SOFTWARE\%DriverMfgr%\%ProductName%\RenameRestoreFiles,%11%\sluapo32.dll,,0x00000022
@@ -2957,9 +2961,9 @@ SRS3_SYSFX_LFX_CLSID  = "{CB0EAF7D-3991-4921-AA30-CD32798EDC3A}"
 DriverMfgr="Conexant"
 ProductName = "Conexant High Definition SmartAudio"
 DriverVersionID="8.66.57"
-DriverBuildDate="11/24/2016"
-DriverBuildID="8.66.57.51"
-INFVersionID="8.66.57.51-000"
+DriverBuildDate="12/15/2016"
+DriverBuildID="8.66.57.54"
+INFVersionID="8.66.57.54-000"
 DriverFamily="Audio"
 DriverProduct="SmartAudio"
 DriverDescription="Audio Driver"
